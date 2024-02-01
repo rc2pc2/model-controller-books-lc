@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Guest\PageController as GuestPageController;
+use App\Http\Controllers\Admin\BookController as AdminBookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', [GuestPageController::class, 'index' ]);
+Route::get('/books', [AdminBookController::class, 'index' ]);
